@@ -1,4 +1,3 @@
-'use strict';
 var bip32 = require('bip32')
 var bitcoinjs = require('bitcoinjs-lib');
 
