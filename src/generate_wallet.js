@@ -4,7 +4,7 @@ var bitcoinjs = require('bitcoinjs-lib');
 var privKey = process.env.BIP32_PRIV;
 var hdNode = bitcoinjs.HDNode.fromBase58(privKey);
 
-var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 100; // how many addresses to watch
+var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 1000; // how many addresses to watch
 
 
 var rescan = 'false';
