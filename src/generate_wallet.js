@@ -1,3 +1,4 @@
+var bip32 = require('bip32')
 var bitcoinjs = require('bitcoinjs-lib');
 
 var privKey = process.env.BIP32_PRIV;
