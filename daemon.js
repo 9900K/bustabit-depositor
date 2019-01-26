@@ -4,6 +4,7 @@ var bc = require('./src/bitcoin_client');
 var db = require('./src/db');
 var lib = require('./src/lib');
 var generate_addresses = require('./src/generate_addresses');
+var generate_wallet = require('./src/generate_wallet');
 
 
 var client;
