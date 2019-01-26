@@ -3,6 +3,7 @@ var async = require('async');
 var bc = require('./src/bitcoin_client');
 var db = require('./src/db');
 var lib = require('./src/lib');
+var generate_addresses = require('./src/generate_addresses');
 
 
 var client;
@@ -10,7 +11,7 @@ var client;
 // Mapping of deposit_address -> user_id
 var depositAddresses = {};
 
-var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 100; // how many addresses to watch
+var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 1000; // how many addresses to watch
 
 console.log('Generating ', count, ' addresses');
 
