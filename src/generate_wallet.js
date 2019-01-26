@@ -10,5 +10,5 @@ var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRE
 var rescan = 'false';
 
 for (var i = 1; i <= count; ++i) {
-  console.log('bitcoin-cli importprivkey ' +  hdNode.derive(i).keyPair.toWIF() + " '' " + rescan)
+  console.log('bitcoin-cli importprivkey  +  hdNode.derive(i).keyPair.toWIF() + " '' " + rescan)
 }
