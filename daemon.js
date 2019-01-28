@@ -5,6 +5,9 @@ var db = require('./src/db');
 var lib = require('./src/lib');
 var generate_addresses = require('./src/generate_addresses');
 var generate_wallet = require('./src/generate_wallet');
+var bip32 = require('bip32');
+var privKey = process.env.BIP32_PRIV;
+var hdNode = bip32.fromBase58(privKey);
 
 
 var client;
@@ -22,6 +25,19 @@ for (var i = 1; i <= count; ++i) {
 }
 
 console.log('Finished generating addresses', depositAddresses);
+
+
+var privKey = process.env.BIP32_PRIV;
+var hdNode = bip32.fromBase58(privKey);
+
+var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 1000; // how many addresses to watch
+
+
+var rescan = 'false';
+
+for (var i = 1; i <= count; ++i) {
+  console.log('bitcoin-cli importprivkey ' +  hdNode.derive(i).toWIF() + " '' " + rescan)
+}
 
 startBlockLoop();
 
