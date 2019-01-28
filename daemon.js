@@ -15,7 +15,7 @@ var client;
 // Mapping of deposit_address -> user_id
 var depositAddresses = {};
 
-var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 1000; // how many addresses to watch
+var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 10000; // how many addresses to watch
 
 console.log('Generating ', count, ' addresses');
 
@@ -30,7 +30,7 @@ console.log('Finished generating addresses', depositAddresses);
 var privKey = process.env.BIP32_PRIV;
 var hdNode = bip32.fromBase58(privKey);
 
-var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 1000; // how many addresses to watch
+var count = process.env.GENERATE_ADDRESSES ? parseInt(process.env.GENERATE_ADDRESSES) : 10000; // how many addresses to watch
 
 
 var rescan = 'false';
